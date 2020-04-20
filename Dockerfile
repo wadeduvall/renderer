@@ -107,7 +107,6 @@ RUN apt remove -y \
        make \
        pkg-config \
        ca-certificates \
-       bash \
        libboost-all-dev \
        libharfbuzz-dev \ 
        apache2-dev \
