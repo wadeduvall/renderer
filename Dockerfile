@@ -61,10 +61,10 @@ RUN git clone -b switch2osm https://github.com/SomeoneElseOSM/mod_tile.git \
 	&& ldconfig
 
 
-RUN set -o pipefail \
+RUN ["/bin/bash", "-c", "set -o pipefail \
     && wget --quiet -O - https://deb.nodesource.com/setup_10.x | bash - \
     && apt update \
-    && apt install -y nodejs
+    && apt install -y nodejs"]
 
 RUN git clone https://github.com/gravitystorm/openstreetmap-carto.git \
     && git -C openstreetmap-carto checkout v4.23.0 \
