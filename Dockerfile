@@ -1,10 +1,8 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # Install dependencies RUN apt update \
-RUN apt update && apt install -y --no-install-recommends \
+RUN export DEBIAN_FRONTEND=noninteractive && apt update && apt install -y --no-install-recommends \
        git \
-       gcc-6 \
-       g++-6 \
        python \
        python-dev \
        libxml2 \
