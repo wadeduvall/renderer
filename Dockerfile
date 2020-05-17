@@ -87,7 +87,6 @@ RUN mkdir /var/lib/mod_tile \
  	&& mkdir -p /var/run/apache2
 
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
-COPY leaflet-demo.html /var/www/html/index.html
 RUN ln -sf /dev/stdout /var/log/apache2/access.log \
 	&& ln -sf /dev/stderr /var/log/apache2/error.log
 
@@ -127,6 +126,7 @@ RUN apt remove -y \
        libgeos-dev \
        libmapnik-dev \
        python3-mapnik \
-       wget 
+       wget \
+       && apt autoremove -y
 
 CMD ["httpd-foreground"]
