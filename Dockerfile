@@ -65,12 +65,11 @@ RUN ["/bin/bash", "-c", "set -o pipefail \
     && apt install -y nodejs"]
 
 RUN git clone https://github.com/gravitystorm/openstreetmap-carto.git \
-    && git -C openstreetmap-carto checkout v4.23.0 \
+    && git -C openstreetmap-carto checkout v5.4.0 \
     && cd openstreetmap-carto \
     && rm -rf .git \
-    && npm install -g carto@0.18.2 \
-    && carto project.mml > mapnik.xml \
-    && scripts/get-shapefiles.py
+    && npm install -g carto@1.2.0 \
+    && carto project.mml > mapnik.xml
 
 COPY renderd.conf /usr/local/etc/renderd.conf
 
