@@ -60,7 +60,7 @@ RUN git clone -b switch2osm https://github.com/SomeoneElseOSM/mod_tile.git \
 
 
 RUN ["/bin/bash", "-c", "set -o pipefail \
-    && wget --quiet -O - https://deb.nodesource.com/setup_10.x | bash - \
+    && wget --quiet -O - https://deb.nodesource.com/setup_16.x | bash - \
     && apt update \
     && apt install -y nodejs"]
 
