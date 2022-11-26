@@ -2,7 +2,7 @@
 set -e
 
 # start renderer
-renderd -f -c /usr/local/etc/renderd.conf &
+renderd -c /etc/renderd.conf
 
 # Apache gets grumpy about PID files pre-existing
 rm -f /usr/local/apache2/logs/httpd.pid
